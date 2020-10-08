@@ -1,0 +1,9 @@
+{% extends '_base.html' %}
+{% block title %}Pictures{% endblock title %}
+{% block content %}
+{% for picture in object_list %}
+<div>
+    <h2><a href="{{ picture.get_absolute_url }}">{{ picture.title }}</a></h2>
+</div>
+{% endfor %}
+{% endblock content %}

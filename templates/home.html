@@ -1,18 +1,15 @@
+<!-- templates/home.html -->
 {% extends '_base.html' %}
 {% load static %}
-
 {% block title %}Home{% endblock title %}
-
 {% block content %}
-<h1>Welcome to art gallery</h1>
-<img class="bookcover" src="{% static 'images/djangoforprofessionals.jpg' %}">
-
-{% if user.is_authenticated %}
-<p>Hi {{ user.email }}!</p>
-  <p><a href="{% url 'account_logout' %}">Log Out</a></p>
-{% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'account_login' %}">Log In</a>
-  <a href="{% url 'account_signup' %}">Sign Up</a>
-{% endif %}
+<!-- <h1>Homepage</h1> -->
+<div class="jumbotron">
+    <h1 class="display- ">Newspaper app and Art gallery</h1>
+    <p class="lead">A Newspaper website for Goodish</p>
+    <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'article_list' %}"
+    role="button">View All Articles</a>
+    </p>
+</div>
 {% endblock content %}

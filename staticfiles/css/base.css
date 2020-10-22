@@ -1,8 +1,40 @@
 h1 {
-  color: red;
+  color: green;
+  text-align: center;
 }
 
 .bookcover {
   height: 300px;
   width: auto;
+}
+
+/* .jumbotron {
+  background-color: salmon;
+} */
+
+.jumbotron.home {
+  padding: 244px 17rem;
+  position: fixed;
+  margin-top: 103px;
+}
+
+.lead {
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+}
+
+.container{
+  margin-top: 167px;
+  width: 50%;
+  /* border: 2px solid cornflowerblue; */
+  /* border-radius: 10px; */
+  padding-bottom: 23px;
+  padding-top: 23px;
+}
+
+h2{
+  color: royalblue;
 }

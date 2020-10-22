@@ -1,0 +1,13 @@
+<!-- templates/books/search_results.html -->
+{% extends '_base.html' %}
+{% block title %}Search{% endblock title %}
+{% block content %}
+<h1>Search Results</h1>
+{% for picture in object_list %}
+<div>
+<h3><a href="{{ picture.get_absolute_url }}">{{ picture.title }}</a></h3>
+<p>Author: {{ picture.author }}</p>
+<p>Price: $ {{ picture.price }}</p>
+</div>
+{% endfor %}
+{% endblock content %}

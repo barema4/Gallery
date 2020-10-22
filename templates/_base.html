@@ -1,4 +1,5 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -15,20 +16,39 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="{% static 'css/base.css' %}" />
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}"> -->
   </head>
   <body>
     <header>
-      <!-- Fixed navbar -->
       <div
         class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4\ mb-3 bg-white border-bottom shadow-sm"
       >
         <a
           href="{% url 'home' %}"
           class="navbar-brand my-0 mr-md-auto font-weight-normal"
-          >GalleryStore</a
+          >ArtStore</a
         >
+        <div>
+          <form
+            class="form-inline mt-2 mt-md-0"
+            action="{% url 'search_results' %}"
+            method="get"
+          >
+            <input
+              name="q"
+              class="form-control mr-sm-2"
+              type="text"
+              placeholder="Search ArtGallery"
+              aria-label="Search"
+            />
+          </form>
+        </div>
         <nav class="my-2 my-md-0 mr-md-3">
-          <a class="p-2 text-dark" href="{% url 'picture_list' %}">Art&Gallery</a>
+          <a class="p-2 text-dark" href="{% url 'article_new' %}">+ New</a>
+          <a class="p-2 text-dark" href="{% url 'article_list' %}">NewLetter</a>
+          <a class="p-2 text-dark" href="{% url 'picture_list' %}"
+            >Art&Gallery</a
+          >
           <a class="p-2 text-dark" href="{% url 'about' %}">About</a>
           {% if user.is_authenticated %}
           <a class="p-2 text-dark" href="{% url 'account_logout' %}">Log Out</a>

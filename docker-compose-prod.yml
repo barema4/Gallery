@@ -5,20 +5,14 @@ services:
     build: .
     command: gunicorn art_gallery.wsgi -b 0.0.0.0:8000
     environment:
-      - ENVIRONMENT=development
       - SECRET_KEY=vj(3=4j&1hiu#rz08wjr@z(rzb$v*3$xfyyw*lw8&l*(54*25k
-      - DEBUG=1
-    volumes:
-      - .:/code
+      - DEBUG=0
+      - ENVIRONMENT=production
     ports:
       - 8000:8000
     depends_on:
       - db
   db:
     image: postgres:11
-    volumes:
-      - postgres_data:/var/lib/postgresql/data/
     environment:
-      - "POSTGRES_HOST_AUTH_METHOD=trust"
-volumes:
-  postgres_data:
+        - "POSTGRES_HOST_AUTH_METHOD=trust"

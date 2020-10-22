@@ -4,6 +4,7 @@
 {% for picture in object_list %}
 <div>
     <h2><a href="{{ picture.get_absolute_url }}">{{ picture.title }}</a></h2>
+    <img class="bookcover" src="{{ picture.cover.url}}" alt="{{ object.title }}">
 </div>
 {% endfor %}
 {% endblock content %}

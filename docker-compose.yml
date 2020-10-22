@@ -3,7 +3,7 @@ version: "3.2"
 services:
   web:
     build: .
-    command: python /code/manage.py runserver 0.0.0.0:8000
+    command: gunicorn art_gallery.wsgi -b 0.0.0.0:8000
     environment:
       - ENVIRONMENT=development
       - SECRET_KEY=vj(3=4j&1hiu#rz08wjr@z(rzb$v*3$xfyyw*lw8&l*(54*25k
